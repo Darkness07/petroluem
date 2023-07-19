@@ -1,0 +1,11 @@
+/* .componets-container{
+    background-color: red;
+} */
+.componets-container{
+    /* background: red; */
+    /* width: 90%; */
+}
+body{
+overflow-x: hidden;
+overflow-y: scroll;
+}

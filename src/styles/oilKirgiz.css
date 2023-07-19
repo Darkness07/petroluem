@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ourOilK {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.kirgiz {
+  font-size: 57px;
+}
+
+.ourOilText {
+  font-weight: bold;
+}
+
+@media (min-width: 1400px) {
+  .container
+    .container-lg
+    .container-md
+    .container-sm
+    .container-xl
+    .container-xxl {
+    max-width: 100% !important;
+  }
+}
+/* 
+@media (min-width: 1400px)
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+} */
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    width: 100% !important;
+    min-height: 60vh;
+  }
+  .container-lg {
+    width: 80% !important;
+  }
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    /* max-width: 1320px; */
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 0;
+  }
+}
+
+.d-flex {
+  width: 100% !important;
+  display: flex !important;
+}

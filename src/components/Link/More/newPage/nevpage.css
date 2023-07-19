@@ -1,0 +1,47 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.newPage-container{
+    width: 100%;
+    min-height: 105vh;
+    border: 1px solid white;
+}
+
+.new_box_n{
+    margin-top: 90px;
+    width: 90%;
+    min-height:80vh;
+    display:flex;
+    justify-content: space-between;
+}
+
+.text_container_n{
+    width: 500px;
+    height: 850px;
+}
+
+.new_p_text{
+    font-size: 15.5px;
+    font-family: "Golos Text";
+}
+
+.titele_new_p{
+    font-size: 36px;
+    font-weight: 600;
+    font-family: "Gilroy";
+}
+
+.text_container_n_2{
+    width: 700px;
+    height: 850px;
+    display: flex;
+     justify-content:space-around;
+     flex-direction: column;
+}

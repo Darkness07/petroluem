@@ -1,0 +1,248 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.laboratory_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding-left: 20px;
+}
+
+.laboratory_box {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.titelLab {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.container_lm {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-lab-container {
+  width: 57%;
+  min-height: 180vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+}
+
+.card-lab {
+  width: 100%;
+  /* min-height: 460px; */
+  border: 2px solid #86848854;
+  border-radius: 10px;
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 25px;
+  margin-bottom: 35px;
+}
+
+.card_lab2 img{
+  margin-top: 20px;
+}
+
+.card_item {
+  /* width: 250px; */
+  /* height: 300px; */
+  /* padding: 20px; */
+  width: 46%;}
+
+.lab-box2_container {
+  /* width: 800px; */
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.cont_lab{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 40px;
+}
+
+.card_lab2 {
+  margin-right: 5%;
+  /* width: 50%; */
+  /* height: 90vh; */
+  border: 2px solid #86848854;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 28px 20px;
+}
+.lab-titel.p{
+  margin-bottom: 20px;
+}
+
+.contact_la {
+  width: 100%;
+  /* height: px; */
+}
+
+.data_contact {
+  /* width: 100%; */
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 17px;
+}
+.data_contact img{
+  margin-bottom: 16px;
+}
+
+.data_box {
+  width: 150px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.bank_details {
+  width: 100%;
+  min-height: 490px;
+}
+
+.cards_l {
+  width: 90%;
+  min-height: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card_l {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 2px solid #86848854;
+  width: 390px;
+  height: 140px;
+  font-weight: bold;
+}
+
+.lab-titel {
+  color: #868488;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lab_text {
+  font-weight: 600;
+  font-size: 15.5px;
+  font-family: "Golos Text", sans-serif;
+}
+.lab_icon{
+  margin-bottom: 20px;
+}
+.lab-titel.p{
+  margin-bottom: 10px;
+}
+
+.lab-titel_2 {
+  margin-left: 17px;
+  color: #000;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  margin-right: 33px;
+}
+.lab-titel_nav{
+  color: #868488;
+font-size: 15.5px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.077px;
+margin: 5px;
+transform: translateY(-2px);
+}
+
+.jobs {
+  width: 100%;
+  height: 360px;
+}
+
+@media screen and (max-width: 1600px) {
+  .lab-box2_container {
+    width: 550px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .card_lab2 {
+    width: 100%;
+    /* height: 90vh; */
+    border: 2px solid #86848854;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .cards_l {
+    width: 90%;
+    min-height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .cards_l {
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .card_lab2 {
+    width: 100%;
+    height: 90vh;
+    border: 2px solid #86848854;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .card-lab-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+  }
+  .card_item {
+    width: 383px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.gallery-container{
+  width: calc(100% + 110px) !important;
+  /* background-color: blue; */
+  transform: translateX(-120px);
+}
+
+.gallery_backcground {
+  width: 99vw;
+  min-height: 110vh;
+  background-image: url(../../../assets/images/DOS_8722\ 1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.rigthPanel_container {
+  width: 100%;
+  min-height: 110vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rigthPnael {
+  width: 450px;
+  min-height: 110vh;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.17);
+  border-top-left-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gallery_titel {
+  color: white;
+}
+.scroll_bar {
+  width: 80%;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.scroll {
+  width: 100%;
+  height: 80vh;
+}
+
+.imges_bar {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.scroll_bar::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.scroll_bar::-webkit-scrollbar-track {
+  border: 2px solid #c6c6c6;
+  border-radius: 2rem;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb {
+  background-color: #c6c6c6;
+  border-radius: 2rem;
+  width: 10px !important;
+}
+
+.gallery-container {
+  width: 100%;
+  min-height: 120vh;
+}
+@media screen and (max-width: 780px) {
+  .gallery-container {
+    width: 100%;
+    min-height: 120vh;
+    border: 1px solid;
+  }
+}
