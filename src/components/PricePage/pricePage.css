@@ -1,0 +1,25 @@
+.price-page {
+    padding-top: 150px;
+}
+
+.price-page .text-titel{
+    width: 100% !important;
+    text-align: left;
+ }
+.price-page .text-titel span {
+    color: #868488;
+    font-size: 15.5px;
+    font-weight: 400;
+    letter-spacing: -0.077px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .price-page .text-titel span {
+        color: #868488;
+        font-size: 15.5px;
+        font-weight: 400;
+        letter-spacing: -0.077px;
+        display: block;
+    }
+}

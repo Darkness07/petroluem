@@ -3,21 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-.gallery-container{
+
+.gallery-container {
   width: calc(100% + 110px) !important;
   /* background-color: blue; */
-  transform: translateX(-120px);
 }
 
 .gallery_backcground {
   width: 99vw;
   min-height: 110vh;
-  background-image: url(../../../assets/images/DOS_8722\ 1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
-
+.gallery_background-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.scroll_bar_mobile{
+  display: none;
+}
 .rigthPanel_container {
   width: 100%;
   min-height: 110vh;
@@ -28,11 +37,9 @@
 .rigthPnael {
   width: 450px;
   min-height: 110vh;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.17);
@@ -42,9 +49,11 @@
   align-items: center;
   justify-content: center;
 }
+
 .gallery_titel {
   color: white;
 }
+
 .scroll_bar {
   width: 80%;
   height: 80vh;
@@ -55,6 +64,11 @@
   width: 100%;
   height: 80vh;
 }
+
+.scroll img{
+  margin-bottom: 20px;
+}
+
 
 .imges_bar {
   width: 100%;
@@ -84,10 +98,69 @@
   width: 100%;
   min-height: 120vh;
 }
-@media screen and (max-width: 780px) {
+
+@media screen and (max-width: 768px) {
   .gallery-container {
     width: 100%;
     min-height: 120vh;
     border: 1px solid;
+  }
+
+  .gallery_backcground {
+    height: 100vh;
+    position: relative;
+  }
+
+  .rigthPanel_container {
+    align-items: flex-end;
+  }
+
+  .rigthPnael {
+    height: 150px;
+    min-height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 0;
+  }
+
+  .scroll_bar {
+    display: none;
+  }
+
+  .gallery_titel {
+    display: none;
+  }
+
+  .scroll_bar_mobile {
+    overflow-x: scroll;
+    width: 100vw;
+    padding: 10px;
+    display: block;
+  }
+  .gallery-container{
+    transform: translateX(0);
+  }
+
+  .scroll-mobile {
+    display: flex;
+    column-gap: 10px;
+    min-width: 1000px;
+    padding: 10px;
+  }
+
+  .scroll-mobile-img {
+    height: 100px;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+
+  .imges_bar {
+    row-gap: 20px;
+    padding: 10px 0;
+    justify-content: initial;
   }
 }

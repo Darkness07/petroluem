@@ -6,17 +6,17 @@
   overflow: hidden !important;
   /* padding: 0.5rem 0 0.5rem 1.5rem; */
   height: 100%;
-  background-color: #fff;
+  background-color:#292B32;
   width: 53px;
   margin: 0;
-  
+
   border-radius: 6px;
   border: 0.6px solid #c6c6c6;
   background: #fff;
-  
+
   margin-left: 20px;
   padding: 14px 10px !important;
-  transition: background 1s ease-in-out;
+  transition: 1s ease-in-out;
 
 }
 
@@ -24,9 +24,9 @@
   background: #f8f8f8;
   width: 116px;
   position: sticky;
-  top: 0;
+  top: 100px;
   left: 0;
-  height: 100vh;
+  height: calc(100vh - 100px);
   width: 100px;
   /* box-shadow: 0 0 6px 0; */
   padding: 1rem;
@@ -51,4 +51,11 @@ backdrop-filter: blur(22px) !important;
 .flag-box img {
   margin-top: 7px;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none;
+  }
 }

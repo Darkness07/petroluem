@@ -9,8 +9,7 @@
 .laboratory_container {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  padding-left: 20px;
+padding: 130px 0;
 }
 
 .laboratory_box {
@@ -52,6 +51,10 @@
   flex-wrap: wrap;
   padding: 25px;
   margin-bottom: 35px;
+  background-color: white;
+}
+.card_lab2{
+  background-color: white;
 }
 
 .card_lab2 img{
@@ -96,15 +99,15 @@
 
 .contact_la {
   width: 100%;
-  /* height: px; */
+  margin-top: 50px;
 }
 
 .data_contact {
-  /* width: 100%; */
   min-height: 200px;
   display: flex;
   flex-wrap: wrap;
   margin-left: 17px;
+  column-gap: 20px;
 }
 .data_contact img{
   margin-bottom: 16px;
@@ -112,17 +115,18 @@
 
 .data_box {
   width: 150px;
-  height: 70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
   font-weight: bold;
+
 }
 
 .bank_details {
   width: 100%;
   min-height: 490px;
+  margin-top: 50px;
 }
 
 .cards_l {
@@ -139,7 +143,6 @@
   margin-bottom: 20px;
   background-color: white;
   border: 2px solid #86848854;
-  width: 390px;
   height: 140px;
   font-weight: bold;
 }
@@ -150,10 +153,11 @@
   font-weight: 600;
 }
 
-.lab_text {
+.lab_text a {
   font-weight: 600;
   font-size: 15.5px;
   font-family: "Golos Text", sans-serif;
+  color: #000;
 }
 .lab_icon{
   margin-bottom: 20px;
@@ -185,7 +189,6 @@ transform: translateY(-2px);
 
 .jobs {
   width: 100%;
-  height: 360px;
 }
 
 @media screen and (max-width: 1600px) {
@@ -215,7 +218,20 @@ transform: translateY(-2px);
   }
 }
 
-@media screen and (max-width: 570px) {
+
+@media screen and (max-width: 1200px) {
+  .card_l{
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card_l {
+    height: 170px;
+}
+}
+
+@media screen and (max-width: 768px) {
   .cards_l {
     width: 100%;
     min-height: 320px;
@@ -225,7 +241,7 @@ transform: translateY(-2px);
   }
   .card_lab2 {
     width: 100%;
-    height: 90vh;
+    height: auto;
     border: 2px solid #86848854;
     border-radius: 10px;
     display: flex;
@@ -243,6 +259,23 @@ transform: translateY(-2px);
   }
   .card_item {
     width: 383px;
-    height: 300px;
+    height: auto;
   }
+
+}
+
+@media screen and (max-width: 576px) {
+  .titelLab{
+    display: block;
+    margin-bottom: 50px;
+  }
+  .lab-titel_2 {
+    margin-left: 0;
+  }
+  .lab_text {
+    font-size: 12px;
+  }
+  .card_l {
+    height: 120px;
+}
 }

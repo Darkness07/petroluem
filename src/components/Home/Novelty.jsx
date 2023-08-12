@@ -3,162 +3,95 @@ import React, { useEffect, useRef } from "react";
 import "uikit/dist/css/uikit.min.css";
 import "../Home/novelty.css";
 import imges from "../../assets/images/DSC_0352_1 2 (1).png";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { textFunc, getNews } from "../../redux/reducers/app";
 function Novelty() {
-  function onscrrol(e) {
-    console.log(); // Value of scroll Y in px
-  }
+  const news = useSelector((s) => s.app.news);
+  const lang = useSelector((s) => s.app.lang);
+  const dispatch = useDispatch();
+  const text = useSelector( s => s.text);
+
   useEffect(() => {
     Aos.init({ duration: 2000 });
+    dispatch(getNews());
   }, []);
   return (
-    <>
+    <div className="container">
       <div className="scroll-bar">
-        <h1 className="news_item_title">Новости</h1>
+        <h1 className="news_item_title">{textFunc({ru:'Новости', es:'Жаңылыктар', en: 'News'}, lang)}</h1>
 
-        <div className="card_box_scroll">
+        <div className="card_box_scroll desktop-news">
           <div className="cards_box">
-            <div class="news_card">
-              <img
-                src={imges}
-                className="card-images"
-                width="240"
-                height="300"
-                alt=""
-              />
+            {news.map((item) => {
+              return (
+                <div key={item.id} className="news_card">
+                  <img
+                    src={item.main_image}
+                    className="card-images"
+                    width="240"
+                    height="300"
+                    alt=""
+                  />
 
-              <div class="news_card_body">
-                <h3 class="news_card_title">
-                  Договоренность о создании совместного предприятия
-                </h3>
-                <p className="news_card_text">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
-                </p>
-                <div className="card_more_box">
-                  <p className="news_more">Подробнее</p>
-                  <p className="news_more">1995.12.12</p>
+                  <div className="news_card_body">
+                    <h3 className="news_card_title">
+                      {textFunc(item.translations, lang).title}
+                    </h3>
+                    <p className="news_card_text">
+                      {textFunc(item.translations, lang).description}
+                    </p>
+                    <div className="card_more_box">
+                      <Link to={`/news/news_single/${item.id}`} className="news_more">{textFunc({ru:'Подробнее', es: 'Кененирээк', en: 'More'}, lang)}</Link>
+                      <p className="news_more">{item.created}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="news_card">
-              <img
-                src={imges}
-                className="card-images"
-                width="240"
-                height="300"
-                alt=""
-              />
+              );
+            })}
 
-              <div class="news_card_body">
-                <h3 class="news_card_title">
-                  Договоренность о создании совместного предприятия
-                </h3>
-                <p className="news_card_text">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
-                </p>
-                <div className="card_more_box">
-                  <p className="news_more">Подробнее</p>
+          </div>
+        </div>
 
-                  <p className="news_more">1995.12.12</p>
+          <div className="card_box_mobile">
+          {news.map((item) => {
+              return (
+                <div key={item.id} className="news_card">
+                  <img
+                    src={item.main_image}
+                    className="card-images"
+                    width="240"
+                    height="300"
+                    alt=""
+                  />
+
+                  <div className="news_card_body">
+                    <h3 className="news_card_title">
+                      {textFunc(item.translations, lang).title}
+                    </h3>
+                    <p className="news_card_text">
+                      {textFunc(item.translations, lang).description}
+                    </p>
+                    <div className="card_more_box">
+                      <Link to={`/news/news_single/${item.id}`} className="news_more">{textFunc({ru:'Подробнее', es: 'Кененирээк', en: 'More'}, lang)}</Link>
+                      <p className="news_more">{item.created}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="news_card">
-              <img
-                src={imges}
-                className="card-images"
-                width="240"
-                height="300"
-                alt=""
-              />
-
-              <div class="news_card_body">
-                <h3 class="news_card_title">
-                  Договоренность о создании совместного предприятия
-                </h3>
-                <p className="news_card_text">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
-                </p>
-                <div className="card_more_box">
-                  <p className="news_more">Подробнее</p>
-
-                  <p className="news_more">1995.12.12</p>
-                </div>
-              </div>
-            </div>{" "}
-            <div class="news_card">
-              <img
-                src={imges}
-                className="card-images"
-                width="240"
-                height="300"
-                alt=""
-              />
-
-              <div class="news_card_body">
-                <h3 class="news_card_title">
-                  Договоренность о создании совместного предприятия
-                </h3>
-                <p className="news_card_text">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
-                </p>
-                <div className="card_more_box">
-                  <p className="news_more">Подробнее</p>
-
-                  <p className="news_more">1995.12.12</p>
-                </div>
-              </div>
-            </div>{" "}
-            <div class="news_card">
-              <img
-                src={imges}
-                className="card-images"
-                width="240"
-                height="300"
-                alt=""
-              />
-
-              <div class="news_card_body">
-                <h3 class="news_card_title">
-                  Договоренность о создании совместного предприятия
-                </h3>
-                <p className="news_card_text">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
-                </p>
-                <div className="card_more_box">
-                  <p className="news_more">Подробнее</p>
-
-                  <p className="news_more">1995.12.12</p>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
-        </div>
-          <p className='news_scroll_text'>Листайте вправо</p>
+
+        {
+          news.length > 2
+          ?  <p className="news_scroll_text">{textFunc({ru: 'Листайте вправо',
+          es: 'Оңго сыдырыңыз', en: 'Scroll right'}, lang)}</p>
+          : ''
+        }
+<Link to='/news' className="news-all-link">{textFunc(text.allNews, lang)} > </Link>
       </div>
-    </>
+    </div>
   );
 }
 

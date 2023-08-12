@@ -10,12 +10,16 @@ import Footer from "./components/Footer/Footer";
 import './App.css'
 import Leaders from "./components/Home/Leaders/Leaders";
 import Procurement from "./components/Home/Procurement";
+import NewsPage from "./components/NewsPage/NewsPage";
+import PricePage from "./components/PricePage/PricePage";
+import ProdactionPage from "./components/ProdactionPage/ProdactionPage";
+import NewsSinglePage from "./components/NewsSinglePage/NewsSinglePage";
 
 function App() {
   return (
     <main>
       <div className="App">
-        <SideBar />
+   
         <div className="body">
           <NavBar />
           <Routes>
@@ -25,6 +29,10 @@ function App() {
             <Route path="/newPage" element={<NevPage />} />
             <Route path='/leaders' element={<Leaders/>}/>
             <Route path='/purchases' element={<Procurement/>}/>
+            <Route path='/news' element={<NewsPage/>}/>
+            <Route path="/price" element={<PricePage />}/>
+            <Route path="/prodaction_page" element={<ProdactionPage/>} />
+            <Route path="/news/news_single/:id" element={<NewsSinglePage />} />
           </Routes>
         </div>
       </div>

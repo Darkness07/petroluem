@@ -3,55 +3,50 @@ import "../Story/story.css";
 import storyimages from "../../../assets/images/DSC_0352_1 1 (1).png";
 import moreIcon from "../../../assets/images/Vector (8).png";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { textFunc} from "../../../redux/reducers/app";
+import bgImg from './history-bg.jpg';
 function Story() {
+  const text = useSelector((s) => s.text);
+  const lang = useSelector((s) => s.app.lang);
   return (
-    <div>
-      <h1 className="story_title">История</h1>
+    <section className="story">
+      <img src={bgImg} alt="" className="story-bg-img"/>
+        <div className="container story-container">
+      <h1 className="story_title">{textFunc(text.history, lang)}</h1>
       <div className="story_container">
         <div className="data-text_contaner">
           <div className="data-box">
-            <div className="line">
-              <p className="data_p">1995</p>
-              <div className="line_l"></div>
-              <p className="data_p">6.10.1996</p>
-              <div className="line_l"></div>
-              <p className="data_p">1998-2001</p>
-            </div>
+
             <div className="text_l">
               <div className="text_box">
+              <p className="data_p">1995</p>
                 <h2 className="item_title">
-                  Договоренность о создании совместного предприятия
+                  {textFunc(text.historyTitle1, lang)}
                 </h2>
                 <p className="p-text-is">
-                  Между открытым акционерным обществом «Кыргызнефтегаз» и
-                  акционерным обществом с ограниченной ответственностью
-                  «ПетроКыргызстан» (Джерси) была достигнута договоренность о
-                  создании совместного предприятия ЗАО «Кыргыз Петролеум
-                  Компани».
+                {textFunc(text.historyText1, lang)}
                 </p>
               </div>
               <div className="text_box">
-                <h2 className="item_title">Торжественное открытие</h2>
+              <p className="data_p">6.10.1996</p>
+                <h2 className="item_title"> {textFunc(text.historyTitle2, lang)}</h2>
                 <p className="p-text-is">
-                  Строительство НПЗ в городе Жалал-Абад началось в январе 1996
-                  года, и было завершено в установленные сроки - в сентябре 1996
-                  года. Нефтеперерабатывающий завод ЗАО «КПК» был торжественно
-                  открыт 6 октября 1996 года.
+                {textFunc(text.historyText2, lang)}
                 </p>
               </div>
               <div className="text_box">
-                <h2 className="item_title">Технические усовершенствования</h2>
+              <p className="data_p">1998-2001</p>
+                <h2 className="item_title"> {textFunc(text.historyTitle3, lang)}</h2>
                 <p className="p-text-is">
-                  Новые технические усовершенствования на НПЗ были проведены в
-                  1998-2001 годах для увеличения октанового числа производимого
-                  бензина.
+                {textFunc(text.historyText3, lang)}
                 </p>
               </div>
             </div>
           </div>
           <div className="more">
             <NavLink className="more_text" to="/more">
-              Узнать подробнее
+              {textFunc(text.more, lang)}
               <img src={moreIcon} className="moreIcon" alt="" />
             </NavLink>
           </div>
@@ -62,49 +57,43 @@ function Story() {
       </div>
       <div className="stor-container">
         {/* mobile */}
-        <h1>История</h1>
+        <h1>{textFunc(text.history, lang)}</h1>
         <img src={storyimages} className="storyimages" alt="" />
         <div className="text_cont-i">
           <p>1995</p>
-          <h4> Договоренность о создании совместного предприятия</h4>
+          <h4>  {textFunc(text.historyTitle1, lang)}</h4>
           <p className="p-text-is">
             {" "}
-            Между открытым акционерным обществом «Кыргызнефтегаз» и акционерным
-            обществом с ограниченной ответственностью «ПетроКыргызстан» (Джерси)
-            была достигнута договоренность о создании совместного предприятия
-            ЗАО «Кыргыз Петролеум Компани».
+            {textFunc(text.historyText1, lang)}
           </p>
           <div className="line_l"></div>
         </div>
         <div className="text_cont-i">
           <p>6.10.1996</p>
-          <h4> Торжественное открытие</h4>
+          <h4>  {textFunc(text.historyTitle2, lang)}</h4>
           <p className="p-text-is">
             {" "}
-            Строительство НПЗ в городе Жалал-Абад началось в январе 1996 года, и
-            было завершено в установленные сроки - в сентябре 1996 года.
-            Нефтеперерабатывающий завод ЗАО «КПК» был торжественно открыт 6
-            октября 1996 года. lorem*8
+            {textFunc(text.historyText2, lang)}
           </p>
           <div className="line_l"></div>
         </div>
         <div className="text_cont-i">
           <p>1998-2001</p>
-          <h4> Технические усовершенствования</h4>
+          <h4>{textFunc(text.historyTitle3, lang)}</h4>
           <p className="p-text-is">
             {" "}
-            Новые технические усовершенствования на НПЗ были проведены в
-            1998-2001 годах для увеличения октанового числа производимого
-            бензина.
+            {textFunc(text.historyText3, lang)}
           </p>
         </div>
         <NavLink className="more_text" to="/more">
-          Узнать подробнее
+        {textFunc(text.more, lang)}
           <img src={moreIcon} className="moreIcon" alt="" />
         </NavLink>
         <div className="lin_x"></div>
       </div>
     </div>
+    </section>
+
   );
 }
 

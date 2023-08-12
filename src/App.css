@@ -1,14 +1,12 @@
 .body {
   position: relative !important;
-  background: #f8f8f8;
+  background: skyblue;
 
-  width: calc(100vw - 117px);
-  overflow-x: hidden;
 }
 .App {
   position: relative;
-  display: flex;
-  background-color: #f8f8f8;
+
+  background-color: skyblue;
 }
 
 main {
@@ -26,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #fcfcfc;
+  background-color: skyblue;
 }
 .line {
   text-align: center;
@@ -39,13 +37,11 @@ body {
 @media screen and (max-width: 768px) {
   .body {
     position: relative;
-    background: #f8f8f8;
-  
+
     width: 100%;
   }
   .components {
     position: relative;
-    background: #f8f8f8;
 
     width: 100%;
     padding-left: 0;
@@ -68,19 +64,6 @@ body {
   }
 
 
-
-
-  .scroll-bar {
-    padding-left: 40px;
-  }
-
-
-
-
-
-  .gallery_backcground {
-    width: 116vw;
-  }
   .gallery-container {
     border: none;
     width: 116%;
@@ -95,9 +78,7 @@ body {
   .container_l {
     width: 50%;
   }
-  .card_v {
-    width: 44% !important;
-  }
+
   .cards_n {
     display: flex;
     flex-direction: row;
@@ -107,35 +88,11 @@ body {
 
 
 
-  .card {
-    width: 46% !important
-  ;
-  }
+
   .container_procurement {
     margin-left: 20px;
   }
 
-
-
-  .footer-container {
-    padding: 0 !important;
-  }
-  .item-f.text {
-    width: 50%;
-  }
-
-
-
-  .container {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    margin-left: 50px;
-    margin-right: 50px !important;
-  }
-  .ourOilK {
-    width: 50%;
-  }
 
   .ourOilK.tablet {
     display: block !important;
@@ -151,7 +108,6 @@ padding-bottom: 10px;
 line-height: 45px;
   }
   .ourOilText{
-    color: #000;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -161,13 +117,8 @@ letter-spacing: -0.07px;
   .ourOilK.desktop {
     display: none;
   }
-  .ourOilK.right{
-    padding-left: 70px;
-  }
-  .container{
-    margin-top: 30px;
-    height: fit-content;
-  }
+
+
 }
 
 .ourOilK.tablet {

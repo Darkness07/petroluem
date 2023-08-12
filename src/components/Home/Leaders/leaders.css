@@ -3,10 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-.leaders_container{
 
-  margin-top: 150px;
+.leaders_container {
+ background-image: url('./img/leaders-bg.png');
+ background-size: cover;
+  margin: 150px 0;
+  padding: 100px 0;
 }
+
 .container_l {
   width: 33%;
   min-height: 85vh;
@@ -24,10 +28,11 @@
 }
 
 .card-img-top {
-  width: 250px !important;
+  width: 250px;
   height: 300px;
   transform: translateX(-20px);
 }
+
 .leader_item_title {
   color: #000;
   margin-top: 13px;
@@ -38,22 +43,21 @@
   letter-spacing: -0.13px;
   margin-bottom: 3px;
 }
-.leaders_title{
-  color: #000;
-margin-left: 17px;
-font-size: 36px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: -0.18px;
+
+.leaders_title {
+  color: #fff;
+  margin-left: 17px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.18px;
 }
 
 .card-l {
-  margin: 17px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: calc(100.33% - 20px) !important;
-  max-width: calc(93.33% - 20px) !important;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
@@ -64,17 +68,19 @@ letter-spacing: -0.18px;
 .card-l {
   height: 520px !important;
 }
-.leader_card-text{
+
+.leader_card-text {
   color: #000;
-font-family: Golos Text;
-font-size: 15.5px;
-font-style: normal;
-font-weight: 400;
-line-height: 25px; /* 161.29% */
-letter-spacing: -0.232px;
+  font-family: Golos Text;
+  font-size: 15.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  /* 161.29% */
+  letter-spacing: -0.232px;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   .container_l {
     width: 45%;
     min-height: 54vh;
@@ -83,15 +89,41 @@ letter-spacing: -0.232px;
     justify-content: space-around;
     margin-top: 0px;
   }
+  .leaders_container {
+    margin-top: 50px;
+}
+
   .card-l {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: calc(94.33% - 20px) !important;
-    max-width: calc(94.33% - 20px) !important;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: white;
     border: 2px solid rgb(177, 177, 177);
+    width: 100%;
   }
+  .card-img-top{
+    width: 100%;
+    transform: translateX(0);
+  }
+  .leader_item_title {
+    font-size: 20px;
+  }
+  .leader_card-text{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card-img-top {
+    transform: translateX(0);
+  }
+
+  .leader_item_title {
+    font-size: 20px;
+  }
+
+  .leader_card-text {
+    font-size: 12px;
+  }
+
 }

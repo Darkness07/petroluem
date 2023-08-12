@@ -7,9 +7,9 @@ function Home() {
       <div className="componets-container">
         {compmonents.map((data) => {
           return (
-            <>
-              <div className="components">{data.comp}</div>
-            </>
+
+              <div key={data.id} className="components">{data.comp}</div>
+
           );
         })}
       </div>

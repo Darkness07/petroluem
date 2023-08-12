@@ -2,10 +2,14 @@ import "../Gallery/gallery.css";
 import imagesbar1 from "../../../assets/images/DSC_0352_1 4.png";
 import imagesbar2 from "../../../assets/images/DSC_0352_1 5.png";
 import imagesbar3 from "../../../assets/images/DSC_0352_1 6.png";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
+import { textFunc } from "../../../redux/reducers/app";
+import { useSelector } from "react-redux";
 
 function Gallery(params) {
+const text = useSelector(s => s.text);
+const lang = useSelector(s => s.app.lang);
   // function chengNavbarSidebar() {
   //   console.log(window.scrollY);
   // }
@@ -15,45 +19,44 @@ function Gallery(params) {
   // function handleScroll() {
   //   console.log("Scrolling");
   // }
+  const imagesList = [
+    {
+      id: 1,
+      img: imagesbar1,
+    },
+    {
+      id: 2,
+      img: imagesbar2,
+    },
+    {
+      id: 3,
+      img: imagesbar3,
+    },
+  ];
+
+  const [selectedImg, setSelectedImg] = useState(imagesList[0]);
 
   const galleryRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // The gallery component is in view
-          handleScroll();
-        } else {
-          handlePass();
-        }
-      },
-      { threshold: 0.6 } // Adjust the threshold as needed
-    );
 
-    if (galleryRef.current) {
-      observer.observe(galleryRef.current);
-    }
 
-    return () => {
-      if (galleryRef.current) {
-        observer.unobserve(galleryRef.current);
-      }
-    };
+
+
+  
+
   }, []);
   function handlePass() {
-    console.log("fghjk");
     let navabar = document.querySelector(".nav-container");
     navabar.classList.remove("transparent");
 
     let sidebar = document.querySelector(".sidebar");
     sidebar.classList.remove("transparent");
-    
+
     let sidebarNav = document.querySelector(".nav");
     sidebarNav.classList.remove("transparent");
   }
   function handleScroll() {
-    console.log("transparent");
     let navabar = document.querySelector(".nav-container");
     navabar.classList.add("transparent");
 
@@ -67,21 +70,58 @@ function Gallery(params) {
   return (
     <div className="gallery-container" ref={galleryRef}>
       <div className="gallery_backcground">
+        <img src={selectedImg.img} className="gallery_background-img" alt="" />
         <div className="rigthPanel_container">
           <div className="rigthPnael">
-            <h1 className="gallery_titel">Галерея</h1>
+            <h1 className="gallery_titel">{textFunc(text.gallery, lang)}</h1>
             <div className="scroll_bar">
               <div className="scroll">
-                <div className="imges_bar">
+                {
+                  imagesList.map( item =>{
+                    return <img
+                    key={item.id}
+                    src={item.img}
+                    alt=""
+                    onClick={()=>{
+                      setSelectedImg(item)
+                    }}
+                  />
+                  })
+                }
+
                   <img src={imagesbar1} alt="" />
                   <img src={imagesbar2} alt="" />
                   <img src={imagesbar3} alt="" />
-                </div>
-                <div className="imges_bar">
-                  <img src={imagesbar1} alt="" />
-                  <img src={imagesbar2} alt="" />
-                  <img src={imagesbar3} alt="" />
-                </div>
+
+              </div>
+            </div>
+
+            <div className="scroll_bar_mobile">
+              <div className="scroll-mobile">
+                {imagesList.map((item) => {
+                  return (
+                    <img
+                      key={item.id}
+                      className="scroll-mobile-img"
+                      src={item.img}
+                      alt=""
+                      onClick={()=>{
+                        setSelectedImg(item)
+                      }}
+                    />
+                  );
+                })}
+                <img className="scroll-mobile-img" src={imagesbar1} alt="" />
+
+                <img className="scroll-mobile-img" src={imagesbar2} alt="" />
+
+                <img className="scroll-mobile-img" src={imagesbar3} alt="" />
+
+                <img className="scroll-mobile-img" src={imagesbar1} alt="" />
+
+                <img className="scroll-mobile-img" src={imagesbar2} alt="" />
+
+                <img className="scroll-mobile-img" src={imagesbar3} alt="" />
               </div>
             </div>
           </div>

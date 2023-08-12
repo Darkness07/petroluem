@@ -1,0 +1,12 @@
+.prodaction-page{
+    padding: 200px 0;
+}
+
+@media screen and (max-width: 992px) {
+    .prodaction-page .col-6{
+        width: 100%;
+    }
+    .prodaction-page-text{
+        margin-bottom: 25px!important;
+    }
+}
